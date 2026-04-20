@@ -38,12 +38,13 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->favicon(asset('images/favicon.ico'))
             ->brandLogo(config('branding.logo_url'))
+            ->darkMode(false)
             ->brandLogoHeight('2rem')
             ->passwordReset()
             ->emailVerification()
             ->profile()
             ->colors([
-                'primary' => Color::Blue,
+                'primary' => Color::hex(config('branding.primary_color')),
             ])
             ->unsavedChangesAlerts()
             ->topNavigation()
