@@ -2,20 +2,38 @@
 
 namespace Webkul\Survey\Http\Controllers\API\V1;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\Validator as ValidatorContract;
 use Webkul\Survey\Enums\SurveyQuestionType;
+use Webkul\Survey\Http\Resources\V1\PublicAppBootstrapResource;
+use Webkul\Survey\Http\Resources\V1\PublicSurveyListResource;
 use Webkul\Survey\Http\Resources\V1\PublicSurveyResource;
 use Webkul\Survey\Models\Survey;
 use Webkul\Survey\Models\SurveyResponse;
 
 class PublicSurveyController extends Controller
 {
+    public function bootstrap(): PublicAppBootstrapResource
+    {
+        return new PublicAppBootstrapResource([
+            'surveys' => $this->publicSurveyQuery()->get(),
+        ]);
+    }
+
+    public function index(): AnonymousResourceCollection
+    {
+        return PublicSurveyListResource::collection(
+            $this->publicSurveyQuery()->get()
+        );
+    }
+
     public function show(string $token): PublicSurveyResource
     {
         $survey = Survey::query()
@@ -188,5 +206,13 @@ class PublicSurveyController extends Controller
         }
 
         return $messages;
+    }
+
+    protected function publicSurveyQuery(): Builder
+    {
+        return Survey::query()
+            ->publiclyAccessible()
+            ->withCount('questions')
+            ->orderBy('title');
     }
 }

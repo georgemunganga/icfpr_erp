@@ -14,6 +14,13 @@ Route::name('admin.api.v1.surveys.')
 Route::name('api.v1.public.surveys.')
     ->prefix('api/v1/public/surveys')
     ->group(function (): void {
+        Route::get('/', [PublicSurveyController::class, 'index'])->name('index');
         Route::get('{token}', [PublicSurveyController::class, 'show'])->name('show');
         Route::post('{token}/responses', [PublicSurveyController::class, 'store'])->name('responses.store');
+    });
+
+Route::name('api.v1.public.app.')
+    ->prefix('api/v1/public/app')
+    ->group(function (): void {
+        Route::get('/', [PublicSurveyController::class, 'bootstrap'])->name('bootstrap');
     });
