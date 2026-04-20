@@ -48,7 +48,7 @@
                                     <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
                                         <span class="text-white font-bold text-lg">A</span>
                                     </div>
-                                    <span class="text-xl font-bold text-gray-900 dark:text-white">AureusERP</span>
+                                    <span class="text-xl font-bold text-gray-900 dark:text-white">{{ config('branding.company_name') }}</span>
                                 </div>
                             @endif
                         </div>
@@ -216,7 +216,7 @@
                     <footer class="py-8 border-t border-gray-200 dark:border-gray-700">
                         <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                             <p class="text-gray-600 dark:text-gray-400 text-sm">
-                                © {{ date('Y') }} AureusERP. {{ __('welcome.footer.copyright') }}
+                                © {{ date('Y') }} {{ config('branding.company_name') }}. {{ __('welcome.footer.copyright') }}
                             </p>
                             <p class="text-gray-500 dark:text-gray-500 text-sm">
                                 {{ __('welcome.footer.powered_by') }} v{{ Illuminate\Foundation\Application::VERSION }}
