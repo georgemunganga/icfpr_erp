@@ -2,7 +2,7 @@
 
 return [
     'model-label' => 'الضريبة',
-    'navigation' => [
+    'navigation'  => [
         'title' => 'الضرائب',
         'group' => 'المحاسبة',
     ],

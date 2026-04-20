@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'title' => 'الدفع',
+    'title'       => 'الدفع',
     'model-label' => 'الدفع',
-    'navigation' => [
+    'navigation'  => [
         'title' => 'المدفوعات',
         'group' => 'الفواتير',
     ],

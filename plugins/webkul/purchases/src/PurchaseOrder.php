@@ -26,6 +26,7 @@ use Webkul\Purchase\Models\AccountMove;
 use Webkul\Purchase\Models\Order;
 use Webkul\Purchase\Models\OrderLine;
 use Webkul\Purchase\Settings\OrderSettings;
+use Webkul\Security\Enums\PermissionType;
 
 class PurchaseOrder
 {
@@ -112,7 +113,7 @@ class PurchaseOrder
             return false;
         }
 
-        if (in_array($user->resource_permission, [\Webkul\Security\Enums\PermissionType::GLOBAL, \Webkul\Security\Enums\PermissionType::GROUP])) {
+        if (in_array($user->resource_permission, [PermissionType::GLOBAL, PermissionType::GROUP])) {
             return true;
         }
 
@@ -420,7 +421,7 @@ class PurchaseOrder
         $pdfPath = 'Request for Quotation-'.str_replace('/', '_', $record->name).'.pdf';
 
         if (! Storage::exists($pdfPath)) {
-            $pdf = PDF::loadView('purchases::filament.admin.clusters.orders.orders.actions.print-quotation', [
+            $pdf = Pdf::loadView('purchases::filament.admin.clusters.orders.orders.actions.print-quotation', [
                 'records'  => [$record],
             ]);
 
@@ -435,7 +436,7 @@ class PurchaseOrder
         $pdfPath = 'Purchase Order-'.str_replace('/', '_', $record->name).'.pdf';
 
         if (! Storage::exists($pdfPath)) {
-            $pdf = PDF::loadView('purchases::filament.admin.clusters.orders.orders.actions.print-purchase-order', [
+            $pdf = Pdf::loadView('purchases::filament.admin.clusters.orders.orders.actions.print-purchase-order', [
                 'records'  => [$record],
             ]);
 

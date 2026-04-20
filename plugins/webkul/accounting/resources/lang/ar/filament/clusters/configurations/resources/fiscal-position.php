@@ -2,7 +2,7 @@
 
 return [
     'model-label' => 'المركز المالي',
-    'navigation' => [
+    'navigation'  => [
         'title' => 'المركز المالي',
         'group' => 'المحاسبة',
     ],

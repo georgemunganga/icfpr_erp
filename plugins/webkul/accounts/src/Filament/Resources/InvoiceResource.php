@@ -70,6 +70,7 @@ use Webkul\Account\Filament\Resources\InvoiceResource\Pages\ViewInvoice;
 use Webkul\Account\Livewire\InvoiceSummary;
 use Webkul\Account\Models\CashRounding;
 use Webkul\Account\Models\Invoice;
+use Webkul\Account\Models\Journal;
 use Webkul\Account\Models\MoveLine;
 use Webkul\Account\Models\Partner;
 use Webkul\Account\Models\Product;
@@ -318,7 +319,7 @@ class InvoiceResource extends Resource
                                                 modifyQueryUsing: function (Builder $query, Get $get) {
                                                     $companyId = $get('company_id') ?? filament()->auth()->user()->default_company_id;
 
-                                                    $bankAccountIds = \Webkul\Account\Models\Journal::where('type', \Webkul\Account\Enums\JournalType::BANK)
+                                                    $bankAccountIds = Journal::where('type', JournalType::BANK)
                                                         ->where('company_id', $companyId)
                                                         ->pluck('bank_account_id')
                                                         ->filter();

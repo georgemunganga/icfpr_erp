@@ -2,7 +2,7 @@
 
 return [
     'title' => 'إدارة المنتجات',
-    'form' => [
+    'form'  => [
         'enable-variants' => 'المتغيرات',
     ],
 ];

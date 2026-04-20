@@ -2,7 +2,7 @@
 
 return [
     'model-label' => 'العملة',
-    'navigation' => [
+    'navigation'  => [
         'title' => 'العملات',
         'group' => 'المحاسبة',
     ],

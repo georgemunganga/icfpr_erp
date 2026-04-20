@@ -1272,7 +1272,7 @@ class OrderResource extends Resource
 
             $set('product_uom_qty', round($productUOMQty, 2));
 
-            $uom = Uom::find($get('uom_id'));
+            $uom = UOM::find($get('uom_id'));
 
             $productQty = $uom ? $productUOMQty * $uom->factor : $productUOMQty;
 

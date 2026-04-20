@@ -2,7 +2,7 @@
 
 return [
     'title' => 'إدارة الضرائب',
-    'form' => [
+    'form'  => [
         'default-taxes' => [
             'label' => 'الضرائب الافتراضية',
         ],

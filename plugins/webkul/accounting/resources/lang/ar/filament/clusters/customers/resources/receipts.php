@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'title' => 'الإيصالات',
+    'title'      => 'الإيصالات',
     'navigation' => [
         'title' => 'الإيصالات',
     ],
     'form' => [
         'fieldset' => [
-            'title' => 'المستقبل',
+            'title'  => 'المستقبل',
             'fields' => [
-                'reference' => 'المرجع',
+                'reference'         => 'المرجع',
                 'payment-reference' => 'مرجع الدفع',
             ],
         ],

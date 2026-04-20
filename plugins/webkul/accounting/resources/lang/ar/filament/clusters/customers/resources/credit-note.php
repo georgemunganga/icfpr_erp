@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'title' => 'إشعار دائن',
+    'title'      => 'إشعار دائن',
     'navigation' => [
         'title' => 'إشعارات دائنة',
     ],
     'global-search' => [
         'customer' => 'العميل',
-        'amount' => 'المبلغ',
+        'amount'   => 'المبلغ',
     ],
 ];

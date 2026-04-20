@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'استرجاع',
+    'title'      => 'استرجاع',
     'navigation' => [
         'title' => 'الاسترجاعات',
     ],
@@ -10,8 +10,8 @@ return [
         'amount' => 'المبلغ',
     ],
     'form' => [
-        'biller' => 'المصدر',
-        'reference' => 'المرجع',
+        'biller'            => 'المصدر',
+        'reference'         => 'المرجع',
         'payment-reference' => 'مرجع الدفع',
     ],
 ];

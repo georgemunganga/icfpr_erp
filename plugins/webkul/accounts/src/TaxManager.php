@@ -3,12 +3,12 @@
 namespace Webkul\Account;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Webkul\Account\Enums\AmountType;
 use Webkul\Account\Enums\TaxIncludeOverride;
 use Webkul\Account\Models\Account;
 use Webkul\Account\Models\Product;
 use Webkul\Account\Models\Tax;
-use Illuminate\Support\Facades\Auth;
 use Webkul\Account\Models\TaxPartition;
 use Webkul\Account\Settings\TaxesSettings;
 use Webkul\Partner\Models\Partner;

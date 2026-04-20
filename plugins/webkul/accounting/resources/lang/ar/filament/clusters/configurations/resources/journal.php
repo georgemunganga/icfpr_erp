@@ -2,7 +2,7 @@
 
 return [
     'model-label' => 'اليوميات',
-    'navigation' => [
+    'navigation'  => [
         'title' => 'اليوميات',
         'group' => 'المحاسبة',
     ],

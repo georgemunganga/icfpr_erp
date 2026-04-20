@@ -2,7 +2,7 @@
 
 return [
     'title' => 'إدارة فواتير العميل',
-    'form' => [
+    'form'  => [
         'cash-rounding' => [
             'label' => 'تقريب النقد',
         ],

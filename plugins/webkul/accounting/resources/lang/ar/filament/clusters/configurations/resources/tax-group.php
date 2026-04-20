@@ -2,7 +2,7 @@
 
 return [
     'model-label' => 'مجموعة الضريبة',
-    'navigation' => [
+    'navigation'  => [
         'title' => 'مجموعات الضريبة',
         'group' => 'المحاسبة',
     ],
