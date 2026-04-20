@@ -1,0 +1,30 @@
+{
+    "name": "webkul/surveys",
+    "description": "Survey creation and response collection",
+    "authors": [
+        {
+            "name": "Aureus ERP",
+            "email": "support@aureuserp.in"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Survey\\SurveyServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Survey\\": "src/",
+            "Webkul\\Survey\\Database\\Factories\\": "database/factories/",
+            "Webkul\\Survey\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webkul\\Survey\\Tests\\": "tests/"
+        }
+    }
+}

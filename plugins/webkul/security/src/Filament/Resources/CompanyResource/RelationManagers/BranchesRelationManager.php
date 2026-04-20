@@ -314,7 +314,10 @@ class BranchesRelationManager extends RelationManager
             ])
             ->headerActions([
                 CreateAction::make()
+                    ->label('New branch')
                     ->icon('heroicon-o-plus-circle')
+                    ->modalHeading('Create Branch')
+                    ->modalSubmitActionLabel('Create Branch')
                     ->mutateDataUsing(function ($livewire, array $data): array {
                         $data['user_id'] = Auth::user()->id;
 
@@ -345,8 +348,13 @@ class BranchesRelationManager extends RelationManager
             ->filtersFormColumns(2)
             ->recordActions([
                 ActionGroup::make([
-                    ViewAction::make(),
+                    ViewAction::make()
+                        ->label('View Branch')
+                        ->modalHeading('View Branch'),
                     EditAction::make()
+                        ->label('Edit Branch')
+                        ->modalHeading('Edit Branch')
+                        ->modalSubmitActionLabel('Save changes')
                         ->successNotification(
                             Notification::make()
                                 ->success()

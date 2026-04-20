@@ -36,10 +36,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->favicon(asset('images/favicon.ico'))
+            ->favicon(config('branding.favicon_url'))
             ->brandLogo(config('branding.logo_url'))
             ->darkMode(false)
-            ->brandLogoHeight('2rem')
+            ->brandLogoHeight('3.5rem')
             ->passwordReset()
             ->emailVerification()
             ->profile()
@@ -80,6 +80,9 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label(__('admin.navigation.project'))
                     ->icon('icon-projects'),
+                NavigationGroup::make()
+                    ->label(__('admin.navigation.policy-research'))
+                    ->icon('heroicon-o-document-magnifying-glass'),
                 NavigationGroup::make()
                     ->label(__('admin.navigation.employee'))
                     ->icon('icon-employees'),

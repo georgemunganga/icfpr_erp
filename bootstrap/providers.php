@@ -24,6 +24,7 @@ use Webkul\Recruitment\RecruitmentServiceProvider;
 use Webkul\Sale\SaleServiceProvider;
 use Webkul\Security\SecurityServiceProvider;
 use Webkul\Support\SupportServiceProvider;
+use Webkul\Survey\SurveyServiceProvider;
 use Webkul\TableViews\TableViewsServiceProvider;
 use Webkul\TimeOff\TimeOffServiceProvider;
 use Webkul\Timesheet\TimesheetServiceProvider;
@@ -52,6 +53,7 @@ return [
     SaleServiceProvider::class,
     SecurityServiceProvider::class,
     SupportServiceProvider::class,
+    SurveyServiceProvider::class,
     TableViewsServiceProvider::class,
     TimeOffServiceProvider::class,
     FullCalendarServiceProvider::class,
